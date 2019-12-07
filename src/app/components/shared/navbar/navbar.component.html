@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/A-64.png" width="30" height="30" alt="">
+        </a>
+      </nav>
+    <a class="navbar-brand" href="#">App Heroes</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a [routerLinkActiveOptions]="{ exact: true }"  routerLinkActive="active" [routerLink]="[ '/']" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActiveOptions]="{ exact: true }"  routerLinkActive="active" [routerLink]="[ '/about']" class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActiveOptions]="{ exact: true }"  routerLinkActive="active" [routerLink]="[ '/heroes']" class="nav-link">Heroes</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto class="form-control mr-sm-2" type="search" placeholder="Buscar Heroe" aria-label="Search">
+        <button (click)="buscarHeroe(buscarTexto.value)" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+      </form>
+    </div>
+  </nav>

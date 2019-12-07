@@ -1,0 +1,36 @@
+<div class="animated fadeIn jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Resultados encontrados para: {{busqueda}}</h1>
+        </div>
+        </div>
+  
+   
+   
+      
+    <ng-container *ngIf="resultado.length>0; else elseTemplate">
+    <div id="listado-heroes">
+      <div class="container">
+        <div class="card-columns">
+          <div *ngFor="let heroe of resultado; let i = index;" class="card animated fadeIn fast">
+            <img class="card-img-top" src="{{heroe.img}}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{heroe.nombre}} - {{heroe.casa}}</h5>
+              <p class="card-text">{{heroe.bio}}</p>
+              <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+         
+              <!-- Si ponga / te va a otra ruta fuera del slug sino esta dentro de la ruta que se encuentre -->
+            <!--   <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block"> Ver más..</button> -->
+
+            </div>
+          </div>
+        </div>
+        <a [routerLink]="['/heroes']" class="btn btn-outline-primary btn-block">Regresar</a> 
+      </div>
+      </div>
+    </ng-container>
+      <ng-template #elseTemplate>
+          <div class="alert alert-primary" role="alert">
+             No se encontraron resultados
+            </div>
+      </ng-template>
+    
